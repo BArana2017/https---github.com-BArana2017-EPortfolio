@@ -1,0 +1,39 @@
+@import <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300.700&display=swap" rel="stylesheet">
+body {
+    background-image: url(anime-cherry-blossom-forest-scenic-japanese-pink-sakura-trees-mount-fuji-lake-reflection-day-sky_811279-913.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+* {
+    font-family:'Times New Roman';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    color: black;
+    text-align: center;
+    line-height: 1.25;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* NAVIGATION */
+
+nav {
+    height: 100px;
+    max-width: 1000px
+    width: 100%
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
