@@ -6,7 +6,18 @@
     <title>E-Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b4e081c4a9.js" crossorigin="anonymous"></script>
-</head>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "UQbMcE40RNazkwACj",
+      });
+   })();
+</script>
+  </head>
 <body>
     <section id="landing-page">
     <nav>
@@ -34,6 +45,7 @@
               link__hover-effect
               link__hover-effect--black
             ">Contact</a>
+          </li>
             <li class="nav__link">
             <a href="#" class="
               nav__link--anchor
@@ -74,7 +86,7 @@
         <h3 class="modal__title modal__title--about">Here's a Bit About Me</h3>
         <h4 class="modal__subtitle modal__subtitle--about">Frontend Software Engineer</h4>
         <p class="modal__para">
-          I'm a Frontend Software Engineer with a background in customer service and hospitality. I recently completed a coding bootcamp where I learned HTML, CSS and JavaScript. I'm passionate about creating user-friendly web applications that provide great user experiences. When I'm not coding, I enjoy hiking, reading, and exploring new places.
+          I'm a Frontend Software Engineer with a background in customer service and hospitality. I recently completed a coding bootcamp where I learned HTML, CSS and JavaScript. I'm passionate about creating user-friendly web applications that provide great user experiences. When I'm not coding, I enjoy drawing, reading, and language-learning.
           <br>I currently work on difficult engineering problems and learn from a team consisting of some of the most <b class="orange">talented and experienced software engineers</b> every day.
         </p>
         <div class="modal__languages">
@@ -97,9 +109,9 @@
           Let's Have a Chat
         </h3>
         <h3 class="modal__sub-title modal__sub-title--contact">
-          I'm currently open to new oppotunities.
+          I'm currently open to new opportunities.
         </h3>
-        <form id="contact__form" action="">
+        <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
             <label class="form__item--label">Name</label>
             <input class="input" name="user_name" type="text" required>
@@ -117,7 +129,11 @@
         <div class="modal__overlay modal__overlay--loading">
           <i class="fas fa-spinner"></i>
         </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking to you soon.
+        </div>
       </div>
+      <i class="fas fa-times modal__exit click"></i>
     </div>
     </section>
     <section id="projects">
