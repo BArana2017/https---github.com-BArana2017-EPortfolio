@@ -1,11 +1,22 @@
-// Initialize EmailJS
+let contrastToggle = false;
+
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList += " dark-theme";
+}
+  else {
+    document.body.classList.remove("dark-theme");
+  }
+}
+
 (function () {
   emailjs.init({
     publicKey: "UQbMcE40RNazkwACj",
   });
 })();
 
-// Contact form handler
+
 function contact(event) {
   event.preventDefault();
 
@@ -16,10 +27,10 @@ function contact(event) {
 
   emailjs
     .sendForm(
-      "service_auraybw",        // ✅ Your EmailJS service ID
-      "template_xyut2an",       // ✅ Your EmailJS template ID
+      "service_auraybw",
+      "template_xyut2an",
       event.target,
-      "UQbMcE40RNazkwACj"       // ✅ Your public key
+      "UQbMcE40RNazkwACj"     
     )
     .then(() => {
       loading.classList.remove("modal__overlay--visible");
@@ -34,13 +45,11 @@ function contact(event) {
     });
 }
 
-// Wait until DOM is fully loaded
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Form submission handler
   const form = document.getElementById("contact__form");
   form.addEventListener("submit", contact);
 
-  // Modal open/close handlers
   const modal = document.querySelector(".modal");
   const mailBtn = document.querySelector(".mail__btn");
   const closeModal = document.querySelector(".modal__exit");
@@ -51,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeModal.addEventListener("click", () => {
     modal.classList.remove("modal--open");
-    // Optional: remove overlays if modal was exited early
     document
       .querySelector(".modal__overlay--success")
       .classList.remove("modal__overlay--visible");
